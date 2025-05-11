@@ -12,8 +12,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::latest()->with('user')->get();
-        return view('blogs.index', compact('blogs'));
+        return view('blogs.index', [
+            'blogs' => Blog::with('user')->get()
+        ]);
     }
 
     /**
@@ -75,7 +76,7 @@ class BlogController extends Controller
 
         $blog->update($request->only('title', 'content'));
 
-        return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
+        return redirect(route('blogs.index'))->with('success', 'Blog updated successfully.');
     }
 
     /**

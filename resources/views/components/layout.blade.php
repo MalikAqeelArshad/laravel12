@@ -15,15 +15,13 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black text-white font-hanken-grotesk pb-20">
-    <div class="px-10">
-        <nav class="flex justify-between items-center py-4 border-b border-white/10">
-            <div>
-                <a href="/">
-                    {{-- <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""> --}}
-                    Logo
-                </a>
-            </div>
+<body class="bg-gray-50">
+    <div class="bg-white border-b border-gray-100/90 shadow-xs">
+        <nav class="container mx-auto p-5 flex justify-between items-center">
+            <a href="/">
+                LOGO
+                {{-- <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt=""> --}}
+            </a>
 
             <div class="space-x-6 font-bold">
                 <a href="/blogs">Blogs</a>
@@ -39,7 +37,7 @@
                         @csrf
                         @method('DELETE')
 
-                        <button>Log Out</button>
+                        <button class="cursor-pointer">Log Out</button>
                     </form>
                 </div>
             @endauth
@@ -51,11 +49,11 @@
                 </div>
             @endguest
         </nav>
-
-        <main class="mt-10 max-w-[986px] mx-auto">
-            {{ $slot }}
-        </main>
     </div>
+
+    <main class="container mx-auto p-5">
+        {{ $slot }}
+    </main>
 
 </body>
 

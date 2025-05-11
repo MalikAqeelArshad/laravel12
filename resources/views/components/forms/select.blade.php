@@ -13,3 +13,12 @@
         {{ $slot }}
     </select>
 </x-forms.field>
+
+{{-- Example --}}
+{{-- <select name="tag">
+    @foreach ($blog->tags as $tag)
+    <option value="{{ $tag }}" @selected(old('tag')==$tag)>
+        {{ $tag }}
+    </option>
+    @endforeach
+</select> --}}

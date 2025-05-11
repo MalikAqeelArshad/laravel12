@@ -9,7 +9,7 @@ class Blog extends Model
     // protected $fillable = [];
     protected $guarded = [];
 
-    public function author()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
